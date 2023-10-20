@@ -21,6 +21,12 @@ class _NfcChargingPageState extends State<NfcChargingPage> {
   final NfcChargingStore _store = Modular.get<NfcChargingStore>();
 
   @override
+  void initState() {
+    super.initState();
+    _store.createTagWithAmount(widget.value);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return NfcScaffoldWidget<NfcChargingStore, NfcChargingViewModel>(
         store: _store,
