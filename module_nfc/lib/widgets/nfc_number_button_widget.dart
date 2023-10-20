@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:module_commons/commons.dart';
 
 class NfcNumberButtonWidget extends StatelessWidget {
@@ -13,7 +14,10 @@ class NfcNumberButtonWidget extends StatelessWidget {
     return Expanded(
         child: CupertinoButton(
             padding: EdgeInsets.zero,
-            onPressed: () => onTapButton.call(value),
+            onPressed: () {
+              onTapButton.call(value);
+              HapticFeedback.lightImpact();
+            },
             child: Container(
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(

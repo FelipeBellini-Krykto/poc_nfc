@@ -20,7 +20,7 @@ class BillingAmountStore extends Store<BillingAmountViewModel> {
 
   void goToChargingPage() {
     if (state.controller.text.isNotEmpty)
-      Modular.to.popAndPushNamed(NfcRoutes.nfcCharging, arguments: state.controller.text);
+      Modular.to.pushNamed(NfcRoutes.nfcCharging, arguments: state.controller.text);
   }
 
   double get _currentValuesToDouble {

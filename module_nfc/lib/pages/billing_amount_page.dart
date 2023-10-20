@@ -32,12 +32,11 @@ class _BillingAmountPageState extends State<BillingAmountPage> {
             store: _store,
             builder: (context, triple) => Padding(
                 padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).viewInsets.top + NfcDimens.xxxs,
+                    top: MediaQuery.of(context).viewInsets.top + NfcDimens.xxs,
                     right: NfcDimens.xxs,
                     left: NfcDimens.xxs),
                 child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       NfcRenderAmountWidget(amount: _store.state.controller.text),
                       SizedBox(height: NfcDimens.xxxs),

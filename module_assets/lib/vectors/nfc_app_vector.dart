@@ -1,5 +1,6 @@
 enum NfcAppImageVector {
-  ic_clean
+  ic_clean,
+  ic_nfc,
 }
 
 extension ImageVectorExtension on NfcAppImageVector {
