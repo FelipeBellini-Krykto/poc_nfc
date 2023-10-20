@@ -61,7 +61,7 @@ abstract class NfcColors {
   static const Color blueGrayNineHundred = Color.fromRGBO(16, 19, 35, 1);
   static const Color blueGrayFiveHundred = Color.fromRGBO(78, 91, 166, 1);
 
-  static const Color neutralGraySeven = Color.fromRGBO(71, 84, 103, 1);
+  static const Color neutralGraySeven = Color.fromRGBO(55, 132, 245, 1.0);
   static const Color neutralGraySix = Color.fromRGBO(102, 112, 133, 1);
   static const Color neutralGrayTree = Color.fromRGBO(228, 231, 236, 1);
 

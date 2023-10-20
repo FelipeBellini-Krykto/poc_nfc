@@ -28,7 +28,8 @@ class NfcModule extends Module {
   void routes(r) {
     r.child(NfcRoutes.billingAmount, transition: TransitionType.rightToLeft, child: (_) => BillingAmountPage());
     r.child(NfcRoutes.cardManagement, transition: TransitionType.rightToLeft, child: (_) => CardManagementPage());
-    r.child(NfcRoutes.nfcCharging, transition: TransitionType.rightToLeft, child: (_) => NfcChargingPage());
+    r.child(NfcRoutes.nfcCharging,
+        transition: TransitionType.rightToLeft, child: (_) => NfcChargingPage(value: r.args.data));
     r.child(NfcRoutes.nfcPaymentReader, transition: TransitionType.rightToLeft, child: (_) => NfcPaymentReaderPage());
     r.child(NfcRoutes.selectOperation, child: (_) => SelectOperationPage());
   }

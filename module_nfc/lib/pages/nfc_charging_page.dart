@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NfcChargingPage extends StatefulWidget {
-  const NfcChargingPage({super.key});
+  final String value;
+
+  const NfcChargingPage({Key? key, required this.value}) : super(key: key);
 
   @override
   State<NfcChargingPage> createState() => _NfcChargingPageState();
