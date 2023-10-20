@@ -4,6 +4,8 @@ export 'package:module_commons/helpers/nfc_routes.dart';
 export 'package:module_commons/helpers/nfc_ui.dart';
 export 'package:module_commons/helpers/nfc_helper.dart';
 export 'package:module_commons/helpers/nfc_masked_helper.dart';
+export 'package:module_commons/helpers/nfc_generate_rsa.dart';
 export 'package:module_commons/widgets/nfc_scaffold_widget.dart';
 export 'package:module_commons/widgets/nfc_button_widget.dart';
 export 'package:module_commons/widgets/app_bar/nfc_app_bar_widget.dart';
+export 'package:module_commons/widgets/nfc_fab_widget.dart';

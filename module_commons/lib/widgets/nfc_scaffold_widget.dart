@@ -8,6 +8,7 @@ class NfcScaffoldWidget<TStore extends BaseStore<TState>, TState extends Object>
   final Widget body;
   final Widget? bottomNavigationBar;
   final Widget? bottomSheet;
+  final Widget? floatingActionButton;
   final bool extendBodyBehindAppBar;
   final bool extendBody;
   final Color backgroundColor;
@@ -17,6 +18,7 @@ class NfcScaffoldWidget<TStore extends BaseStore<TState>, TState extends Object>
     super.key,
     required this.body,
     required this.store,
+    this.floatingActionButton,
     this.progressIndicatorValue,
     this.backgroundColor = NfcColors.scaffoldBackground,
     this.extendBody = false,
@@ -51,6 +53,7 @@ class NfcScaffoldWidget<TStore extends BaseStore<TState>, TState extends Object>
             appBar: appBar,
             body: body,
             bottomNavigationBar: bottomNavigationBar,
-            bottomSheet: bottomSheet));
+            bottomSheet: bottomSheet,
+            floatingActionButton: floatingActionButton));
   }
 }
