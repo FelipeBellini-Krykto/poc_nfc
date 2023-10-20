@@ -30,6 +30,7 @@ class _NfcChargingPageState extends State<NfcChargingPage> {
   Widget build(BuildContext context) {
     return NfcScaffoldWidget<NfcChargingStore, NfcChargingViewModel>(
         store: _store,
+        appBar: NfcAppBarWidget(title: "Cobrança"),
         body: TripleBuilder<NfcChargingStore, NfcChargingViewModel>(
             store: _store,
             builder: (_, triple) => Column(children: [

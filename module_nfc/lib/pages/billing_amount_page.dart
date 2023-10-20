@@ -28,6 +28,7 @@ class _BillingAmountPageState extends State<BillingAmountPage> {
   Widget build(BuildContext context) {
     return NfcScaffoldWidget<BillingAmountStore, BillingAmountViewModel>(
         store: _store,
+        appBar: NfcAppBarWidget(title: "Criar cobrança"),
         body: TripleBuilder<BillingAmountStore, BillingAmountViewModel>(
             store: _store,
             builder: (context, triple) => Padding(
@@ -35,50 +36,48 @@ class _BillingAmountPageState extends State<BillingAmountPage> {
                     top: MediaQuery.of(context).viewInsets.top + NfcDimens.xxs,
                     right: NfcDimens.xxs,
                     left: NfcDimens.xxs),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      NfcRenderAmountWidget(amount: _store.state.controller.text),
-                      SizedBox(height: NfcDimens.xxxs),
-                      Container(
-                          height: _getMaxHeight(context),
-                          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                            NfcNumberButtonWidget(value: '1', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '2', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '3', onTapButton: _store.onTapNumber),
-                          ])),
-                      SizedBox(height: NfcDimens.xxxs),
-                      Container(
-                          height: _getMaxHeight(context),
-                          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                            NfcNumberButtonWidget(value: '4', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '5', onTapButton: _store.onTapNumber),
-                            SizedBox(width: 16),
-                            NfcNumberButtonWidget(value: '6', onTapButton: _store.onTapNumber),
-                          ])),
-                      SizedBox(height: NfcDimens.xxxs),
-                      Container(
-                          height: _getMaxHeight(context),
-                          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                            NfcNumberButtonWidget(value: '7', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '8', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '9', onTapButton: _store.onTapNumber),
-                          ])),
-                      SizedBox(height: NfcDimens.xxxs),
-                      Container(
-                          height: _getMaxHeight(context),
-                          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-                            NfcNumberIconWidget(onTapButton: _store.clean, icon: Icons.backspace_outlined),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberButtonWidget(value: '0', onTapButton: _store.onTapNumber),
-                            SizedBox(width: NfcDimens.xxxs),
-                            NfcNumberIconWidget(onTapButton: _store.goToChargingPage, icon: Icons.navigate_next_sharp),
-                          ]))
-                    ]))));
+                child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                  NfcRenderAmountWidget(amount: _store.state.controller.text),
+                  SizedBox(height: NfcDimens.xxxs),
+                  Container(
+                      height: _getMaxHeight(context),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                        NfcNumberButtonWidget(value: '1', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '2', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '3', onTapButton: _store.onTapNumber),
+                      ])),
+                  SizedBox(height: NfcDimens.xxxs),
+                  Container(
+                      height: _getMaxHeight(context),
+                      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                        NfcNumberButtonWidget(value: '4', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '5', onTapButton: _store.onTapNumber),
+                        SizedBox(width: 16),
+                        NfcNumberButtonWidget(value: '6', onTapButton: _store.onTapNumber),
+                      ])),
+                  SizedBox(height: NfcDimens.xxxs),
+                  Container(
+                      height: _getMaxHeight(context),
+                      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                        NfcNumberButtonWidget(value: '7', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '8', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '9', onTapButton: _store.onTapNumber),
+                      ])),
+                  SizedBox(height: NfcDimens.xxxs),
+                  Container(
+                      height: _getMaxHeight(context),
+                      child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                        NfcNumberIconWidget(onTapButton: _store.clean, icon: Icons.backspace_outlined),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberButtonWidget(value: '0', onTapButton: _store.onTapNumber),
+                        SizedBox(width: NfcDimens.xxxs),
+                        NfcNumberIconWidget(onTapButton: _store.goToChargingPage, icon: Icons.navigate_next_sharp),
+                      ]))
+                ]))));
   }
 }

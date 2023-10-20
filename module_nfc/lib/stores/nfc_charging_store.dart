@@ -7,10 +7,6 @@ class NfcChargingStore extends Store<NfcChargingViewModel> {
 
   void createTagWithAmount(String amount) async {
     bool nfcIsAvailable = await NfcHelper.NfcIsAvailable();
-    if (nfcIsAvailable) {
-      NfcHelper.startSession(amount);
-    } else {
-      print("sem permissão");
-    }
+    nfcIsAvailable ? NfcHelper.startSession(amount) : print("sem permissão");
   }
 }
