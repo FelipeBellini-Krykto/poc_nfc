@@ -6,7 +6,7 @@ class NfcChargingStore extends Store<NfcChargingViewModel> {
   NfcChargingStore() : super(NfcChargingViewModel());
 
   void createTagWithAmount(String amount) async {
-    bool nfcIsAvailable = await NfcHelper.NfcIsAvailable();
-    nfcIsAvailable ? NfcHelper.startSession(amount) : print("sem permissão");
+    await NfcHelper.writeTagNFT(amount);
+    // nfcIsAvailable ? NfcHelper.startSession(amount) : print("sem permissão");
   }
 }
