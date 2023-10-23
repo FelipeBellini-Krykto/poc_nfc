@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:module_commons/commons.dart';
+import 'package:module_external_dependencies/flutter_modular.dart';
 import 'package:module_external_dependencies/mobx_triple.dart';
 import 'package:module_nfc/view_model/card_management_view_model.dart';
 import 'package:module_core/models/card_model.dart';
@@ -28,5 +29,5 @@ class CardManagementStore extends Store<CardManagementViewModel> {
     localStorage.put(CARDS, jsonPairKeys);
   }
 
-  void openCardForPayment(CardModel card) {}
+  void openCardForPayment(CardModel card) => Modular.to.pushNamed(NfcRoutes.nfcPaymentReader, arguments: card);
 }

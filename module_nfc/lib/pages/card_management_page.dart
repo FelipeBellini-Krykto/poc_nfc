@@ -32,8 +32,9 @@ class _CardManagementPageState extends State<CardManagementPage> {
             store: _store,
             builder: (context, triple) => ListView.builder(
                 padding: EdgeInsets.only(top: NfcDimens.xxxs),
-                itemBuilder: (_, int index) =>
-                    NfcCardItemWidget(card: _store.state.listCard[index], onTapCard: _store.openCardForPayment),
+                itemBuilder: (_, int index) => GestureDetector(
+                    onTapDown: (_) => _store.openCardForPayment(_store.state.listCard[index]),
+                    child: NfcCardItemWidget(card: _store.state.listCard[index])),
                 itemCount: _store.state.listCard.length)));
   }
 }
