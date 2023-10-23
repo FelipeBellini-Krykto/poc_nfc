@@ -4,6 +4,7 @@ import 'package:module_external_dependencies/flutter_modular.dart';
 import 'package:module_external_dependencies/mobx_triple.dart';
 import 'package:module_nfc/stores/card_management_store.dart';
 import 'package:module_nfc/view_model/card_management_view_model.dart';
+import 'package:module_nfc/widgets/nfc_card_item_widget.dart';
 
 class CardManagementPage extends StatefulWidget {
   const CardManagementPage({super.key});
@@ -24,11 +25,9 @@ class _CardManagementPageState extends State<CardManagementPage> {
         body: TripleBuilder<CardManagementStore, CardManagementViewModel>(
             store: _store,
             builder: (context, triple) => ListView.builder(
-                  itemBuilder: (_, int index) {
-                    return Container(
-                        height: 80, margin: EdgeInsets.symmetric(horizontal: NfcDimens.xxxs), color: Colors.black);
-                  },
-                  itemCount: 3,
-                )));
+                padding: EdgeInsets.only(top: NfcDimens.xxxs),
+                itemBuilder: (_, int index) =>
+                    NfcCardItemWidget(card: _store.state.listCard[index], onTapCard: _store.openCardForPayment),
+                itemCount: _store.state.listCard.length)));
   }
 }

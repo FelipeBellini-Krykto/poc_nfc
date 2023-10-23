@@ -10,6 +10,8 @@ import 'package:module_nfc/stores/card_management_store.dart';
 import 'package:module_nfc/stores/nfc_charging_store.dart';
 import 'package:module_nfc/stores/nfc_payment_reader_store.dart';
 import 'package:module_nfc/stores/select_operation_store.dart';
+import 'package:module_core/services/local_storage_service/interface/local_storage_interface.dart';
+import 'package:module_core/services/local_storage_service/local_storage_service.dart';
 
 class NfcModule extends Module {
   @override
@@ -21,7 +23,7 @@ class NfcModule extends Module {
     i.add<NfcPaymentReaderStore>(NfcPaymentReaderStore.new);
     i.add<SelectOperationStore>(SelectOperationStore.new);
 
-    // i.addLazySingleton<ILocalStorage>(LocalStorageService.new);
+    i.addLazySingleton<ILocalStorage>(LocalStorageService.new);
   }
 
   @override

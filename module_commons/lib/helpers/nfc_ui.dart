@@ -15,4 +15,6 @@ class NfcAppUI {
   static void setPortraitOrientation() {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   }
+
+  static String shortKey(String key) => "${key.substring(0, 2)}...${key.substring(key.length - 4)}";
 }
