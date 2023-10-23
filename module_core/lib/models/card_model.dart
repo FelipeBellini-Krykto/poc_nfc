@@ -17,4 +17,11 @@ class CardModel {
       "privateKey": privateKey,
     };
   }
+
+  factory CardModel.fromMap(Map<String, dynamic> map) {
+    return CardModel(
+      publicKey: map["publicKey"] ?? "",
+      privateKey: map["privateKey"] ?? "",
+    );
+  }
 }

@@ -17,6 +17,12 @@ class _CardManagementPageState extends State<CardManagementPage> {
   final CardManagementStore _store = Modular.get<CardManagementStore>();
 
   @override
+  void initState() {
+    _store.getMyCards();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return NfcScaffoldWidget<CardManagementStore, CardManagementViewModel>(
         store: _store,
