@@ -29,7 +29,7 @@ abstract class NfcHelper {
   static writeTagNFT(String key) async {
     await FlutterNfcKit.writeNDEFRecords([
       ndef.TextRecord(text: key, language: 'en'),
-      ndef.MimeRecord(decodedType: 'Content-type', payload: Uint8List.fromList('com.nfc.app'.codeUnits)),
+      ndef.MimeRecord(decodedType: 'Content-type', payload: Uint8List.fromList('com.nfc.poc.app'.codeUnits)),
     ]);
   }
 }
