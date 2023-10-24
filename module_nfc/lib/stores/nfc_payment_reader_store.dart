@@ -14,5 +14,6 @@ class NfcPaymentReaderStore extends Store<NfcPaymentReaderViewModel> {
   _readTagNFC() async {
     String? keyReceived = await NfcHelper.listenerTag();
     print(keyReceived);
+    update(state.copyWith(response: keyReceived??""));
   }
 }

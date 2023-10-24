@@ -31,7 +31,8 @@ class _NfcPaymentReaderPageState extends State<NfcPaymentReaderPage> {
                   Icon(Icons.contactless_outlined,
                       color: NfcColors.monoWhite, size: MediaQuery.sizeOf(context).width * 0.2),
                   SizedBox(height: NfcDimens.xxxs),
-                  NfcCardItemWidget(card: widget.cardModel)
+                  NfcCardItemWidget(card: widget.cardModel),
+                  Text(_store.state.valueResponse)
                 ])));
   }
 }
