@@ -30,11 +30,16 @@ class _CardManagementPageState extends State<CardManagementPage> {
         floatingActionButton: NfcFABWidget(onTap: _store.createNewCard),
         body: TripleBuilder<CardManagementStore, CardManagementViewModel>(
             store: _store,
-            builder: (context, triple) => ListView.builder(
-                padding: EdgeInsets.only(top: NfcDimens.xxxs),
-                itemBuilder: (_, int index) => GestureDetector(
-                    onTapDown: (_) => _store.openCardForPayment(_store.state.listCard[index]),
-                    child: NfcCardItemWidget(card: _store.state.listCard[index])),
-                itemCount: _store.state.listCard.length)));
+            builder: (context, triple) => Visibility(
+                visible: _store.state.listCard.length != 0,
+                child: ListView.builder(
+                    padding: EdgeInsets.only(top: NfcDimens.xxxs),
+                    itemBuilder: (_, int index) => GestureDetector(
+                        onTapDown: (_) => _store.openCardForPayment(_store.state.listCard[index]),
+                        child: NfcCardItemWidget(card: _store.state.listCard[index])),
+                    itemCount: _store.state.listCard.length),
+                replacement: Center(
+                    child: Text("Você não tem nenhum cartão no momento...",
+                        style: TextStyle(color: NfcColors.monoWhite, fontSize: 16))))));
   }
 }
